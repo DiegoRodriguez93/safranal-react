@@ -23,7 +23,7 @@ function Chef() {
                 __html: t("chef-title"),
               }}
             ></h2>
-            {/*                 <h2 className="hero-title">We cook any dish of our gastronomy to the taste of the client.</h2> */}
+            {/* <h2 className="hero-title">We cook any dish of our gastronomy to the taste of the client.</h2> */}
 
             <div className="row">
               <div className="col-lg-6 sm-12">

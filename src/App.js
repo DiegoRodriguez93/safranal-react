@@ -11,11 +11,12 @@ import Menu from "./pages/Menu";
 import LanguageSwitcher from "./components/LanguageSwitcher";
 import useFetch from "./hooks/useFetch";
 
-/* import Footer from './components/Footer'; */
-
+/* import Footer from './components/Footer'; */ 
 function App() {
-  const [data] = useFetch(
-    process.env.REACT_APP_BASE_URL + "galeriaDeFotos/listarGaleria.php"
+  // get entity data
+
+  const [entity] = useFetch(
+    process.env.REACT_APP_BASE_URL + "config/entity.php"
   );
 
   return (
@@ -24,10 +25,10 @@ function App() {
         <LanguageSwitcher />
         <Header />
         <Switch>
-          <Route exact path="/" imagenes={data} component={Index} />
-          <Route path="/chef" imagenes={data} component={Chef} />
-          <Route path="/contact" imagenes={data} component={Contact} />
-          <Route path="/menu" imagenes={data} component={Menu} />
+          <Route exact path="/" entity={entity} component={Index} />
+          <Route path="/chef" entity={entity} component={Chef} />
+          <Route path="/contact" entity={entity} component={Contact} />
+          <Route path="/menu" entity={entity} component={Menu} />
         </Switch>
       </div>
     </Router>

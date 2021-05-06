@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useTranslation } from "react-i18next";
-import './loader.css';
+import './../../styles/loader.css';
 
 export default function LanguageSwitcher() {
 

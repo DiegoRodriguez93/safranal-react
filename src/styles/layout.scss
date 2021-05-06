@@ -47,6 +47,9 @@ header{
     body{
         background-image: url('/images/background-mobile.png');
     }
+    .menu-price{
+       transform: translateX(-20px);
+    }
   }
 
   @media only screen and (max-width: 575px) and (min-width: 416px) {

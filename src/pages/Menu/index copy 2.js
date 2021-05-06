@@ -8,14 +8,29 @@ const Menu = () => {
   const [data, loading] = useFetch(
     process.env.REACT_APP_BASE_URL + "productos/listarProductosWeb.php"
   );
-  /*   const [categorias, setCategorias] = useState([]); */
+  const [categorias, setCategorias] = useState([]);
   const { i18n } = useTranslation();
 
   // TODO: ADD A LOCALSTORAGE OR HOOK TO USE OFFLINE
+  useMemo(() => {
+    if (!loading && categorias.length === 0) {
+      let idsCategorias = data.map(({ id_categoria }) => id_categoria);
+
+      setCategorias([...new Set(idsCategorias)]);
+    }
+  }, [data, loading, categorias]);
 
   const lng = i18n.language;
 
-  console.log(data);
+  let categoriasUsadas = [];
+  const verificarCategoriaUsada = (id) => {
+    if (!categoriasUsadas.includes(id.toString())) {
+      categoriasUsadas.push(id.toString());
+      return true;
+    } else {
+      return false;
+    }
+  };
 
   return (
     <Fade>
@@ -25,67 +40,7 @@ const Menu = () => {
             {loading && (
               <div className="loading" style={{ display: "block" }}></div>
             )}
-            {!loading &&
-              data.map(
-                (
-                  { id_categoria, name_categoria, nombre_categoria, productos },
-                  key
-                ) => (
-                  <React.Fragment key={key}>
-                    <div className="row">
-                      <div className="col-12 category">
-                        <h3>
-                          {lng === "es" ? nombre_categoria : name_categoria}
-                        </h3>
-                      </div>
-                    </div>
-                    {productos.map(
-                      (
-                        {
-                          name_producto,
-                          nombre_producto,
-                          precio,
-                          descripcion,
-                          description,
-                          url_foto,
-                        },
-                        key_producto
-                      ) => (
-                        <div className="row menu-container" key={key_producto}>
-                          <div className="col-lg-2 sm-12"></div>
-                          <div className="col-lg-8 sm-12">
-                            <div className="row">
-                              <div className="col-4 menu-img-container">
-                                <img
-                                  src={url_foto}
-                                  className="menu-img"
-                                  alt={name_producto}
-                                />
-                              </div>
-                              <div className="col-6 vertical-align">
-                                <h4 className="menu-name">
-                                  {lng === "es"
-                                    ? nombre_producto
-                                    : name_producto}
-                                </h4>
-                                <h5 className="menu-description">
-                                  {lng === "es" ? descripcion : description}
-                                </h5>
-                              </div>
-                              <div className="col-2 menu-price-container">
-                                <h3 className="menu-price">{precio}</h3>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-lg-2 sm-12"></div>
-                        </div>
-                      )
-                    )}
-                  </React.Fragment>
-                )
-              )}
-
-            {/*             {categorias.length > 0 &&
+            {categorias.length > 0 &&
               categorias.map((id) => {
                 const productos = data.map(
                   (
@@ -147,7 +102,7 @@ const Menu = () => {
                   }
                 );
                 return productos;
-              })} */}
+              })}
           </div>
         </div>
       </div>

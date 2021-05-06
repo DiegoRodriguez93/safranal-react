@@ -35,7 +35,7 @@ i18n
       escapeValue: false
     },
     backend: {
-        loadPath: 'https://ajedrezlatino.com/api-locale/{{lng}}.php'
+        loadPath: 'https://demo.paellastogomiami.com/api/{{lng}}.php'
       }
   });
 

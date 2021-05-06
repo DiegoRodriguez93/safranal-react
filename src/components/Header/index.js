@@ -56,14 +56,14 @@ const Header = () => {
                         <h1>PaellasTo<br/>GoMiami</h1>
                     </div>
                     <nav className="col-lg-8 menu ordenador">
-                        <NavLink exact className="menu-link" activeStyle={isActive} to="/">{t("HOME")}</NavLink>
-                        <NavLink className="menu-link" activeStyle={isActive} to="/menu">{t("MENU")}</NavLink>
+                        <NavLink exact className="menu-link" activeStyle={isActive} to="/">{t("home")}</NavLink>
+                        <NavLink className="menu-link" activeStyle={isActive} to="/menu">{t("menu")}</NavLink>
                         <NavLink className="menu-link" activeStyle={isActive} to="/chef">CHEF</NavLink>
-                        <NavLink className="menu-link" activeStyle={isActive} to="/about">{t("ABOUT")}</NavLink>
-                        <NavLink className="menu-link" activeStyle={isActive} to="/contact">{t("CONTACT")}</NavLink>
+                        <NavLink className="menu-link" activeStyle={isActive} to="/about">{t("about")}</NavLink>
+                        <NavLink className="menu-link" activeStyle={isActive} to="/contact">{t("contact")}</NavLink>
                     </nav>
                     <div className="col-sm-6 mobile">
-                        <img src={ham} onClick={()=>{setMobileMenuVisibility('block')}} className="ham-icon" />
+                        <img src={ham} onClick={()=>{setMobileMenuVisibility('block')}} className="ham-icon" alt="ham-open" />
                         <Dropdown options={options}  onChange={(e) => changeLanguage(e)}  value={defaultOption} placeholder="Select an option" />
                     </div>
                 </div>
@@ -74,14 +74,14 @@ const Header = () => {
                     <div className="col-9"></div>
                     <div className="col-3">
 
-                        <img src={hamX} onClick={handleDisplayNone} className="ham-icon" />
+                        <img src={hamX} onClick={handleDisplayNone} className="ham-icon" alt="ham-close" />
                     </div>
                     <div className="col-12">
-                        <NavLink exact onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/">{t("HOME")}</NavLink>
-                        <NavLink onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/menu">{t("MENU")}</NavLink>
+                        <NavLink exact onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/">{t("home")}</NavLink>
+                        <NavLink onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/menu">{t("menu")}</NavLink>
                         <NavLink onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/chef">CHEF</NavLink>
-                        <NavLink onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/about">{t("ABOUT")}</NavLink>
-                        <NavLink onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/contact">{t("CONTACT")}</NavLink>
+                        <NavLink onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/about">{t("about")}</NavLink>
+                        <NavLink onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/contact">{t("contact")}</NavLink>
                     </div>
                 </div>
             </div>

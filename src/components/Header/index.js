@@ -52,12 +52,13 @@ const Header = () => {
         <header>
             <div className="container">
                 <div className="row" style={{flexWrap: 'nowrap'}}>
-                    <div className="col-lg-4 sm-6">
+                    <div className="col-lg-2 sm-6">
                         <h1>PaellasTo<br/>GoMiami</h1>
                     </div>
-                    <nav className="col-lg-8 menu ordenador">
+                    <nav className="col-lg-10 menu ordenador">
                         <NavLink exact className="menu-link" activeStyle={isActive} to="/">{t("home")}</NavLink>
                         <NavLink className="menu-link" activeStyle={isActive} to="/menu">{t("menu")}</NavLink>
+                        <NavLink className="menu-link" activeStyle={isActive} to="/order-online">{t("orderonline")}</NavLink>
                         <NavLink className="menu-link" activeStyle={isActive} to="/chef">CHEF</NavLink>
                         <NavLink className="menu-link" activeStyle={isActive} to="/about">{t("about")}</NavLink>
                         <NavLink className="menu-link" activeStyle={isActive} to="/contact">{t("contact")}</NavLink>
@@ -79,6 +80,7 @@ const Header = () => {
                     <div className="col-12">
                         <NavLink exact onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/">{t("home")}</NavLink>
                         <NavLink onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/menu">{t("menu")}</NavLink>
+                        <NavLink onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/order-online">{t("orderonline")}</NavLink>
                         <NavLink onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/chef">CHEF</NavLink>
                         <NavLink onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/about">{t("about")}</NavLink>
                         <NavLink onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/contact">{t("contact")}</NavLink>

@@ -11,24 +11,31 @@ import Menu from "./pages/Menu";
 import LanguageSwitcher from "./components/LanguageSwitcher";
 import useFetch from "./hooks/useFetch";
 
-/* import Footer from './components/Footer'; */ 
+/* import Footer from './components/Footer'; */
+
 function App() {
   // get entity data
 
-  const [entity] = useFetch(
-    process.env.REACT_APP_BASE_URL + "config/entity.php"
+  const [entity, loading] = useFetch(
+    process.env.REACT_APP_BASE_URL + "config/entity.php?web=true"
   );
+
+  console.log(entity);
 
   return (
     <Router>
       <div className="App">
         <LanguageSwitcher />
-        <Header />
+        <Header entity={entity} />
         <Switch>
-          <Route exact path="/" entity={entity} component={Index} />
-          <Route path="/chef" entity={entity} component={Chef} />
-          <Route path="/contact" entity={entity} component={Contact} />
-          <Route path="/menu" entity={entity} component={Menu} />
+          {!loading && (
+            <>
+              <Route exact path="/" entity={entity} component={Index} />
+              <Route path="/chef" entity={entity} component={Chef} />
+              <Route path="/contact" entity={entity} component={Contact} />
+              <Route path="/menu" entity={entity} component={Menu} />
+            </>
+          )}
         </Switch>
       </div>
     </Router>

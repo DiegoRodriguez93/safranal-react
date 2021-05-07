@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react';
+import /* React, */{useEffect, useState} from 'react';
 /* import axios from 'axios'; */
 
 export default function useFetch( initialUrl ){
@@ -23,6 +23,7 @@ export default function useFetch( initialUrl ){
 
     useEffect( () => {
         fetchUrl();
+        // eslint-disable-next-line
     }, [reload, url])
 
     return [data, loading, setUrl, reload, setReload];

@@ -92,6 +92,13 @@ p,a {
         cursor: pointer;
         opacity: 0.8;
     } 
+    .language-box{
+        border: 3px solid;
+        cursor: pointer;
+    }
+    .language-box:hover{
+       opacity: 0.7;
+    }
 }
 
 .swal2-html-container{

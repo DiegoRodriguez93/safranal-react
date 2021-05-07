@@ -27,11 +27,13 @@ export default function LanguageSwitcher() {
     return (<>
         <div className="loading" style={{display:loading}}></div>
         <div className="language-switcher ordenador">
-            <div>
-                <img src="/images/lang/en.jpg" onClick={() => changeLanguage('en')} alt="usa flag" />
+            <div className="language-box" onClick={() => changeLanguage('en')}>
+                {/* <img src="/images/lang/en.jpg" onClick={() => changeLanguage('en')} alt="usa flag" /> */}
+                <h4>English</h4>
             </div>
-            <div>
-                <img src="/images/lang/es.png" onClick={() => changeLanguage('es')} alt="spanish flag" />
+            <div className="language-box" onClick={() => changeLanguage('es')}>
+                <h4>Spanish</h4>
+                {/* <img src="/images/lang/es.png" onClick={() => changeLanguage('es')} alt="spanish flag" /> */}
             </div>
         </div>
         </>

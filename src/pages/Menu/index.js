@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React from "react";
 import Fade from "react-reveal/Fade";
 import useFetch from "../../hooks/useFetch";
 import { useTranslation } from "react-i18next";

@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 
-const Header = () => {
+const Header = ({entity}) => {
 
     const { t, i18n } = useTranslation();
 
@@ -48,6 +48,12 @@ const Header = () => {
         textDecoration:'line-through'
       };
 
+      let orderOnlineUrl = '/';
+
+      if(entity[1]){
+        orderOnlineUrl = entity[1].valor;
+      }
+
     return (
         <header>
             <div className="container">
@@ -58,7 +64,7 @@ const Header = () => {
                     <nav className="col-lg-10 menu ordenador">
                         <NavLink exact className="menu-link" activeStyle={isActive} to="/">{t("home")}</NavLink>
                         <NavLink className="menu-link" activeStyle={isActive} to="/menu">{t("menu")}</NavLink>
-                        <NavLink className="menu-link" activeStyle={isActive} to="/order-online">{t("order online")}</NavLink>
+                        <NavLink className="menu-link" activeStyle={isActive} onClick={()=>window.location.replace(orderOnlineUrl)} to="/order-online">{t("order online")}</NavLink>
                         <NavLink className="menu-link" activeStyle={isActive} to="/chef">CHEF</NavLink>
                         {/* <NavLink className="menu-link" activeStyle={isActive} to="/about">{t("about")}</NavLink> */}
                         <NavLink className="menu-link" activeStyle={isActive} to="/contact">{t("contact")}</NavLink>

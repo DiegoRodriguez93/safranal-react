@@ -58,9 +58,9 @@ const Header = () => {
                     <nav className="col-lg-10 menu ordenador">
                         <NavLink exact className="menu-link" activeStyle={isActive} to="/">{t("home")}</NavLink>
                         <NavLink className="menu-link" activeStyle={isActive} to="/menu">{t("menu")}</NavLink>
-                        <NavLink className="menu-link" activeStyle={isActive} to="/order-online">{t("orderonline")}</NavLink>
+                        <NavLink className="menu-link" activeStyle={isActive} to="/order-online">{t("order online")}</NavLink>
                         <NavLink className="menu-link" activeStyle={isActive} to="/chef">CHEF</NavLink>
-                        <NavLink className="menu-link" activeStyle={isActive} to="/about">{t("about")}</NavLink>
+                        {/* <NavLink className="menu-link" activeStyle={isActive} to="/about">{t("about")}</NavLink> */}
                         <NavLink className="menu-link" activeStyle={isActive} to="/contact">{t("contact")}</NavLink>
                     </nav>
                     <div className="col-sm-6 mobile">
@@ -80,9 +80,9 @@ const Header = () => {
                     <div className="col-12">
                         <NavLink exact onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/">{t("home")}</NavLink>
                         <NavLink onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/menu">{t("menu")}</NavLink>
-                        <NavLink onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/order-online">{t("orderonline")}</NavLink>
+                        <NavLink onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/order-online">{t("order online")}</NavLink>
                         <NavLink onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/chef">CHEF</NavLink>
-                        <NavLink onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/about">{t("about")}</NavLink>
+                        {/* <NavLink onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/about">{t("about")}</NavLink> */}
                         <NavLink onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/contact">{t("contact")}</NavLink>
                     </div>
                 </div>

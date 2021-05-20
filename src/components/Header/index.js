@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ham from './ham.png';
 import hamX from './ham-x.png';
+import Logo from './logo.jpeg';
 import { NavLink } from 'react-router-dom'
 import { useTranslation } from "react-i18next";
 
@@ -59,13 +60,14 @@ const Header = ({entity}) => {
             <div className="container">
                 <div className="row" style={{flexWrap: 'nowrap'}}>
                     <div className="col-lg-2 sm-6">
-                        <h1>PaellasTo<br/>GoMiami</h1>
+                        {/* <h1>PaellasTo<br/>GoMiami</h1> */}
+                        <img src={Logo} alt="logo" style={{width:'100%', display:'block'}} />
                     </div>
                     <nav className="col-lg-10 menu ordenador">
                         <NavLink exact className="menu-link" activeStyle={isActive} to="/">{t("home")}</NavLink>
                         <NavLink className="menu-link" activeStyle={isActive} to="/menu">{t("menu")}</NavLink>
                         <NavLink className="menu-link" activeStyle={isActive} onClick={()=>window.location.replace(orderOnlineUrl)} to="/order-online">{t("order online")}</NavLink>
-                        <NavLink className="menu-link" activeStyle={isActive} to="/chef">CHEF</NavLink>
+                        <NavLink className="menu-link" activeStyle={isActive} to="/about">{t("about")}</NavLink>
                         {/* <NavLink className="menu-link" activeStyle={isActive} to="/about">{t("about")}</NavLink> */}
                         <NavLink className="menu-link" activeStyle={isActive} to="/contact">{t("contact")}</NavLink>
                     </nav>
@@ -87,7 +89,7 @@ const Header = ({entity}) => {
                         <NavLink exact onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/">{t("home")}</NavLink>
                         <NavLink onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/menu">{t("menu")}</NavLink>
                         <NavLink onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/order-online">{t("order online")}</NavLink>
-                        <NavLink onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/chef">CHEF</NavLink>
+                        <NavLink onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/about">{t("about")}</NavLink>
                         {/* <NavLink onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/about">{t("about")}</NavLink> */}
                         <NavLink onClick={handleDisplayNone} activeStyle={isActiveInMobile} className="menu-link-mobile" to="/contact">{t("contact")}</NavLink>
                     </div>

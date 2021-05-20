@@ -4,7 +4,7 @@ import "./styles/main.scss";
 
 import Header from "./components/Header";
 import Index from "./pages/Index";
-import Chef from "./pages/Chef";
+import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Menu from "./pages/Menu";
 
@@ -31,7 +31,7 @@ function App() {
           {!loading && (
             <>
               <Route exact path="/" entity={entity} component={Index} />
-              <Route path="/chef" entity={entity} component={Chef} />
+              <Route path="/about" entity={entity} component={About} />
               <Route path="/contact" entity={entity} component={Contact} />
               <Route path="/menu" entity={entity} component={Menu} />
             </>
